@@ -1,0 +1,14 @@
+{
+  "name": "jhowdb",
+  "version": "0.0.2",
+  "description": "a simple .json database",
+  "main": "index.js",
+  "scripts": {
+    "test": "reload"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graceful-fs": "^4.2.8"
+  }
+}
