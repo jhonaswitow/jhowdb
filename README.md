@@ -4,7 +4,7 @@ jhowdb is a simple database, with few functions... soon there will be updates li
 
 ## See all functions below:
   Functions        |  Examples
------------- | ------------ | ------------
+------------ | ------------ 
 .get()     | `jdb.get("user")`
 .add()     | `jdb.add("user", 100)`
 .remove()  | `jdb.remove("user", 100)`
