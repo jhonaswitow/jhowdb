@@ -1,6 +1,3 @@
-## Presentation
-
-jhowdb is a simple database, with few functions... soon there will be updates like: be able to use / in jdb.get("a/a")
 
 ## See all functions below:
   Functions        |  Examples
@@ -9,57 +6,72 @@ jhowdb is a simple database, with few functions... soon there will be updates li
 .add()     | `jdb.add("user", 100)`
 .remove()  | `jdb.remove("user", 100)`
 .set()     | `jdb.set("user", 50)`
+.delete() | `jdb.delete("user")`
+.all() | `jdb.all()`
 
 ## Examples below:
 
 ### Add
 
 ```js
-const jdb = require("jhowdb")
+const db = require("jhowdb")
+const jdb = new db("jhowdb.json") //File where it will be stored
 
-jdb.add("user", {
-economy: {
-   money: 50 + 50
- }
-})
+jdb.add("user", 100)
 
 //Or
 
-jdb.add("user", 100)
+jdb.add("user/oi/bem", 100)
 ```
 
 ### Remove
 ```js
-const jdb = require("jhowdb")
+const db = require("jhowdb")
+const jdb = new db("jhowdb.json") //File where it will be stored
 
-jdb.remove("user", {
-economy: {
-   money: 100 - 100
- }
-})
+jdb.remove("user", 100)
 
 //Or
-jdb.remove("user", 100)
+jdb.remove("user/oi/bem", 100)
 ```
 
 ### Get
 ```js
-const jdb = require("jhowdb")
+const db = require("jhowdb")
+const jdb = new db("jhowdb.json") //File where it will be stored
 
-let value = jdb.get("user")
+let value = jdb.get("user/money") //Also works the "/"
 if(value === null) value = 0 //If you don't put this, or ternary, it will return null
 
-console.log(`You have: ${value.money} coins!`)
+console.log(`You have: ${value} coins!`)
 ```
 
 ### Set
 ```js
-const jdb = require("jhowdb")
+const db = require("jhowdb")
+const jdb = new db("jhowdb.json") //File where it will be stored
 
-jdb.set("guild", {
- info: "Devcenter best botlist/programming server"
-})
+jdb.set("guild", "Devcenter best botlist/programming server")
 
 //Or
-jdb.set("guild", "Devcenter best botlist/programming server")
+jdb.set("guild/info", "Devcenter best botlist/programming server")
+```
+
+### Delete
+```js
+const db = require("jhowdb")
+const jdb = new db("jhowdb.json") //File where it will be stored
+
+jdb.delete("guild")
+
+//Or
+jdb.delete("guild/info")
+```
+
+### All
+```js
+const db = require("jhowdb")
+const jdb = new db("jhowdb.json") //File where it will be stored
+
+console.log(jdb.all())
 ```
