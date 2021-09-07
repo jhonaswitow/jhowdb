@@ -8,6 +8,7 @@
 .set()     | `jdb.set("user", 50)`
 .delete() | `jdb.delete("user")`
 .all() | `jdb.all()`
+.push() | `jdb.push("user", "a")`
 
 ## Examples below:
 
@@ -40,10 +41,10 @@ jdb.remove("user/oi/bem", 100)
 const db = require("jhowdb")
 const jdb = new db("jhowdb.json") //File where it will be stored
 
-let value = jdb.get("user/money") //Also works the "/"
+let value = jdb.get("user") //Also works the "/"
 if(value === null) value = 0 //If you don't put this, or ternary, it will return null
 
-console.log(`You have: ${value} coins!`)
+console.log(`You have: ${value.money} coins!`)
 ```
 
 ### Set
